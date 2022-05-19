@@ -13,7 +13,7 @@ console.log( `"Is mark's BMI higher than john' BMI ? ${higherBi}"` )
 */
 
 // challenge 2 
-
+/*
 var john1score = 97;
 var john2score = 134;
 var john3score = 105;
@@ -46,5 +46,23 @@ else {
     console.log(" they are draw with the same average " + johnAverage);
 }
 
+*/
 
+// challenge 3
 
+var tipCalculator = function(bill){
+    if(bill< 50){
+        return 0.2 *bill;
+    }
+    else if(bill >= 50 && bill <200 ){
+        return 0.15 * bill ;
+    }
+    else {
+        return 0.1 * bill;
+    }
+}
+
+tip = [tipCalculator(124),tipCalculator(48),tipCalculator(268)];
+console.log(tip);
+paid = [124+tip[0],48+tip[1],268+tip[2]];
+console.log(paid)
