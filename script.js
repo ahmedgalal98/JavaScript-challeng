@@ -70,6 +70,8 @@ console.log(paid)
 
 // challenge 4 
 
+/*
+
 var john = {
     fullName : "john samy ",
     mass: 80,
@@ -98,3 +100,74 @@ else if (mark.bmi >  john.bmi){
 else{
     console.log("both "+ john.fullName +"and "+mark.fullName+" has the same BMI value with BMI value "+ john.bmi);
 }
+*/
+
+// challenge 5
+
+var john ={
+    bills :[124,48,268,180,42],
+    tip:[],
+    paied:[],
+    tipCalculator : function(){
+        for(var i=0; i< this.bills.length; i++){
+            if (this.bills[i]<50){
+                this.tip[i]= 0.2*this.bills[i];
+                this.paied[i]= this.tip[i]+this.bills[i];
+            }
+            else if (this.bills[i]>=50 && this.bills[i]< 200){
+                this.tip[i]= 0.15 * this.bills[i];
+                this.paied[i]= this.tip[i]+this.bills[i];
+            }
+            else{
+                this.tip[i] = 0.1* this.bills[i];
+                this.paied[i]= this.tip[i]+this.bills[i];
+            }
+        }
+        
+    }
+}
+john.tipCalculator();
+console.log(john.bills)
+console.log(john.tip);
+console.log(john.paied);
+
+var mark ={
+    bills :[77,375,110,45],
+    tip:[],
+    paied:[],
+    tipCalculator : function(){
+        for(var i=0; i< this.bills.length; i++){
+            if (this.bills[i]<100){
+                this.tip[i]= 0.2*this.bills[i];
+                this.paied[i]= this.tip[i]+this.bills[i];
+            }
+            else if (this.bills[i]>=100 && this.bills[i]< 300){
+                this.tip[i]= 0.1 * this.bills[i];
+                this.paied[i]= this.tip[i]+this.bills[i];
+            }
+            else{
+                this.tip[i] = 0.25* this.bills[i];
+                this.paied[i]= this.tip[i]+this.bills[i];
+            }
+        }
+        
+    }
+}
+
+mark.tipCalculator();
+console.log(mark.bills)
+console.log(mark.tip);
+console.log(mark.paied);
+
+
+var tipAverage = function(tips){
+    var sum =0;
+    for(var i = 0; i < tips.length; i++){
+        sum += tips[i];
+    }
+    console.log(sum/tips.length);
+
+}
+
+tipAverage(john.tip);
+tipAverage(mark.tip);
