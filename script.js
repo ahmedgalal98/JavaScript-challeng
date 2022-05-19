@@ -1,6 +1,10 @@
-console.log("Hellooo")
-var name = 'Ahmed'
-var age = '40'
+var markMass = 70;
+var johnMass = 80;
+var markHight = 1.7;
+var johnHight = 1.75;
 
-var output = `I am ${name} and I am ${age} years old .. I am  ${age > 30? "too old":"still young"}`
-console.log(output)
+markBmi = markMass /(markHight*markHight);
+johnBmi = johnMass / (johnHight*johnHight);
+
+var higherBi = markBmi > johnBmi;
+console.log( `"Is mark's BMI higher than john' BMI ? ${higherBi}"` )
