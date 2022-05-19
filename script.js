@@ -49,7 +49,7 @@ else {
 */
 
 // challenge 3
-
+/*
 var tipCalculator = function(bill){
     if(bill< 50){
         return 0.2 *bill;
@@ -66,3 +66,35 @@ tip = [tipCalculator(124),tipCalculator(48),tipCalculator(268)];
 console.log(tip);
 paid = [124+tip[0],48+tip[1],268+tip[2]];
 console.log(paid)
+*/
+
+// challenge 4 
+
+var john = {
+    fullName : "john samy ",
+    mass: 80,
+    hight : 1.85,
+    calculateBMI : function(){
+        this.bmi = (this.mass)/(this.hight*this.hight);
+    }
+};
+
+var mark = {
+    fullName : "mark adel",
+    mass: 80,
+    hight : 1.85,
+    calculateBMI : function(){
+        this.bmi = (this.mass)/(this.hight*this.hight);
+    }
+};
+john.calculateBMI();
+mark.calculateBMI();
+if (john.bmi >mark.bmi){
+    console.log(john.fullName + " has the highest BMI with BMI value = " + john.bmi);
+}
+else if (mark.bmi >  john.bmi){
+    console.log(mark.fullName + " has the highest BMI with BMI value = " + mark.bmi);
+}
+else{
+    console.log("both "+ john.fullName +"and "+mark.fullName+" has the same BMI value with BMI value "+ john.bmi);
+}
