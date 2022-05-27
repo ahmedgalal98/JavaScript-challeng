@@ -164,7 +164,7 @@ console.log(fulljapan);
 */
 
 // Expert level 
-
+/*
 
 (function(){
 
@@ -226,6 +226,9 @@ console.log(fulljapan);
 })(); 
 
 
+
+
+*/
 
 
 
