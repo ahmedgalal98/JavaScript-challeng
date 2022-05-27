@@ -69,6 +69,9 @@ emilyFormal('morning');
 */
 
 
+
+/*
+
 var years = [1990,1965,1937,2005,1998];
 
 function arrayCalc(arr,fn){
@@ -99,9 +102,128 @@ var fulljapan = arrayCalc(ages,isFullAge.bind(this,20));
 
 console.log(ages);
 console.log(fulljapan);
+*/
 
 
+// quize game challenge 
 
+
+// basic level 
+
+/*
+(function(){
+
+    var Question =function(question,answers,correctAnswer){
+
+        this.question = question,
+        this.answers = answers,
+        this.correctAnswer =correctAnswer,
+        
+        this.displayQuestion = function(){
+    
+            console.log(this.question);
+    
+            for(var i= 0; i <this.answers.length;i++){
+                console.log(i+':'+answers[i]);
+            }
+    
+        }
+    
+        this.checkAnswer = function(ans){
+    
+            if(ans === this.correctAnswer){
+                console.log('Correct Answer');
+            }else{
+                console.log('Wrong Answer')
+            }
+    
+    
+        }
+    
+    
+    }
+    
+    var question1 = new Question('Is JavaScript the coolest programming language in the world ?', ['Yes','No'],0);
+    
+    
+    var question2 = new Question('what is the name of the course\'s teacher ?',['john','micheal','jonas'],2);
+    
+    var question3 = new Question('what dpes best describe coding ?',['boring','hard','fun','tedious'],2);
+    
+    var arrQuestion = [question1,question2,question3];
+    
+    var n = Math.floor(Math.random() * arrQuestion.length);
+    arrQuestion[n].displayQuestion();
+    
+    var answers = parseInt(prompt('please select the correct answer.')); 
+    
+    arrQuestion[n].checkAnswer(answers);
+
+})(); 
+
+*/
+
+// Expert level 
+
+
+(function(){
+
+    var Question =function(question,answers,correctAnswer){
+
+        this.question = question,
+        this.answers = answers,
+        this.correctAnswer =correctAnswer,
+        
+        this.displayQuestion = function(){
+    
+            console.log(this.question);
+    
+            for(var i= 0; i <this.answers.length;i++){
+                console.log(i+':'+answers[i]);
+            }
+
+    
+        }
+    
+        this.checkAnswer = function(ans){
+    
+            if(ans === this.correctAnswer){
+                console.log('Correct Answer');
+            }else{
+                console.log('Wrong Answer')
+            }
+    
+        }
+    
+    
+    }
+    
+    var question1 = new Question('Is JavaScript the coolest programming language in the world ?', ['Yes','No'],0);
+    
+    
+    var question2 = new Question('what is the name of the course\'s teacher ?',['john','micheal','jonas'],2);
+    
+    var question3 = new Question('what dpes best describe coding ?',['boring','hard','fun','tedious'],2);
+    
+    
+    
+    var arrQuestion = [question1,question2,question3];
+    
+    function nextQuestion(){
+        
+        
+        var n = Math.floor(Math.random() * arrQuestion.length);
+        arrQuestion[n].displayQuestion();
+        
+        var answers = parseInt(prompt('please select the correct answer.')); 
+        
+        arrQuestion[n].checkAnswer(answers);
+        nextQuestion();
+
+    };
+    
+    nextQuestion();
+})(); 
 
 
 
